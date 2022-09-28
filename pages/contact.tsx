@@ -1,35 +1,88 @@
 import type { NextPage } from "next";
 import Banner from "../components/reusable/Banner";
-import { useState, useEffect } from "react";
+import { MouseEvent, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
+import toast from "react-hot-toast";
+import axios from "axios";
+import Button from "../components/reusable/Button";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
-const router = useRouter();
-const query = router.query;
 
 const MySwal = withReactContent(Swal);
 
 const Contact: NextPage = () => {
-  useEffect(() => {
-    console.log(query);
-    if (query && query.submit === "true") {
-      MySwal.fire({
-        icon: "success",
-        titleText: "Success",
-        text: "Thank you for submitting an inquiry, a crew member will get in touch with you shortly.",
-        timer: 3500,
-        showConfirmButton: false,
-      });
-    }
-  }, [query]);
-
   const [contactFormData, setContactFormData] = useState({
     fullName: "",
     email: "",
     phone: "",
     message: "",
   });
+  const router = useRouter();
+  const query = router.query;
+
+  useEffect(() => {
+    console.log(query);
+    if (query && query.submit === "true") {
+      MySwal.fire({
+        icon: "success",
+        titleText: "Success",
+        text: "Thank you for submitting an inquiry. A crew member will get in touch with you shortly.",
+        timer: 3500,
+        showConfirmButton: false,
+      });
+    }
+  }, [query]);
+
+  const handleSubmit = async (
+    e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
+  ) => {
+    e.preventDefault();
+
+    if (
+      !contactFormData.email ||
+      !contactFormData.fullName ||
+      !contactFormData.message ||
+      !contactFormData.phone
+    ) {
+      toast.error("Please provide all the details!");
+      return;
+    }
+
+    if (
+      !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+        contactFormData.email.toString()
+      )
+    ) {
+      toast.error("Please provide valid email id");
+      return;
+    }
+
+    if (!/^[0-9]{10}$/.test(contactFormData.phone)) {
+      toast.error("Please provide valid phone number");
+      return;
+    }
+
+    try {
+      const request = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/contactForm`,
+        {
+          fullname: contactFormData.fullName,
+          email: contactFormData.email,
+          message: contactFormData.message,
+          phone: contactFormData.phone,
+        }
+      );
+      const response = request.data;
+      if (response) {
+        toast.success("Your request has been received!");
+        setContactFormData({ fullName: "", email: "", phone: "", message: "" });
+        return;
+      }
+    } catch (error: any) {
+      toast.error("Something went wrong, please try again later.");
+    }
+  };
 
   return (
     <div className="bg-darkBlue text-white">
@@ -122,9 +175,9 @@ const Contact: NextPage = () => {
                 Leave us a message.
               </h2>
               <form
-                action="#"
                 method="POST"
-                className="grid grid-cols-1 gap-y-6 text-"
+                className="grid grid-cols-1 gap-y-6 "
+                action="/contact?submit=true"
               >
                 <div>
                   <label htmlFor="full-name" className="sr-only">
@@ -203,17 +256,13 @@ const Contact: NextPage = () => {
                     rows={4}
                     className="bg-white/10 filter backdrop-blur-3xl block w-full shadow-sm py-3 px-4 placeholder-gray-400 focus:ring-indigo-500 focus:border-indigo-500 rounded-md"
                     placeholder="Message"
-                    defaultValue={""}
+                    // defaultValue={''}
                   />
                 </div>
-                <div>
-                  <button
-                    onClick={() => console.log(contactFormData)}
-                    type="submit"
-                    className="text-accent bg-white/50 text-xl font-bold py-2 px-4 rounded-2xl  hover:-translate-y-1 duration-300 transition-all hover:shadow-2xl hover:bg-orange2 hover:text-white"
-                  >
-                    Submit
-                  </button>
+                <div className="w-max">
+                  <Button onClick={(e) => handleSubmit(e)}>
+                    <>Submit</>
+                  </Button>
                 </div>
               </form>
             </div>
