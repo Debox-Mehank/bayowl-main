@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --pink: #DC2751;
+    --navyBlue: #192b54;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #ff6b35 #0b0b1d;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 7px;
+    height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #0b0b1d;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ff6b35;
+    border-radius: 15px;
+    border: 0px none #ffffff;
+}
+
+/* Nav Dropdown CSS */
+
+.noscroll::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.dropdown {
+    transition: transform 0.3s linear, opacity 0.3s linear, visibility 0.3s linear;
+}
+
+.has_dropdown:focus-within .dropdown,
+.has_dropdown:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.bg-banner {
+    width: 100%;
+    z-index: -9999;
+    filter: brightness(0.4);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 30%;
+    background-image: url(/faqbanner.jpg);
+}
+
+.bg-home-banner {
+    height: 100vh;
+    width: 100%;
+    z-index: -9999;
+    filter: brightness(0.4);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 70% center;
+}
+
+.bg-hero-1 {
+    background-image: url(/Slider/OnlineServices.jpeg);
+}
+
+.bg-hero-2 {
+    background-image: url(/Slider/1.jpg);
+}
+
+.bg-hero-3 {
+    background-image: url(/Slider/2.jpg);
+}
+
+.bg-hero-4 {
+    background-image: url(/Slider/3.jpg);
+}
+
+.bg-hero-5 {
+    background-image: url(/Slider/4.png);
+}
+
+
+
+/* .bg-pulse {
+    background-image: url(/StandingOut/pulseWaves.png);
+    background-repeat: no-repeat;
+    width: 100%;
+} */
+
+.primary-filter {
+    filter: brightness(0) saturate(100%) invert(58%) sepia(55%) saturate(4272%) hue-rotate(338deg) brightness(103%) contrast(101%);
+}
+
+.accent-filter {
+    filter: brightness(0) saturate(100%) invert(11%) sepia(75%) saturate(1645%) hue-rotate(206deg) brightness(89%) contrast(90%);
+}
+
+.border-gradient-br-blue-green-gray-900 {
+    background: linear-gradient(to right, #18181B, #18181B),
+        linear-gradient(to bottom right, #f09402, #ed4731);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.hover\:border-gradient-tl-blue-green-gray-900:hover {
+    background: linear-gradient(to right, #18181B, #18181B),
+        linear-gradient(to bottom right, #f09402, #f09402, #f09402, #f09402, #c5c5c5);
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+}
+
+.gradient-border-3 {
+    border: 3px solid transparent;
+}
+
+.dropShadow {
+    filter: brightness(0.75);
+    filter: drop-shadow(0 0 0.75rem #f09402);
+    /* filter: contrast(1); */
+}
+
+
+/* Terms of Use */

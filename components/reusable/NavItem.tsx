@@ -1,0 +1,44 @@
+import Link from "next/link";
+import React from "react";
+
+interface NavItemRequiredProps {
+    title: string;
+    link: string;
+    active: boolean;
+}
+
+interface NavItemOptionalProps {
+    hasDropdown: boolean;
+}
+
+interface NavItemProps extends NavItemRequiredProps, NavItemOptionalProps { }
+
+const defaultProps: NavItemOptionalProps = {
+    hasDropdown: false
+};
+
+
+
+const NavItem = ({ title, link, active, hasDropdown }: NavItemProps) => {
+    return (
+        <Link href={link}>
+            <span className="transition-colors duration-300 hover:text-primary cursor-pointer space-x-1">
+
+                <a
+                    className={`py-2 font-bold items-center justify-center transition-colors duration-300 hover:text-primary  text-xs md:text-base ${active ? "text-primary" : "text-white"
+                        }`}>
+                    {title}
+                </a>
+                {hasDropdown ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="inline" viewBox="0 0 16 16">
+                    <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+                </svg> : null}
+            </span>
+
+
+        </Link>
+    );
+};
+
+NavItem.defaultProps = defaultProps;
+
+export default NavItem;
