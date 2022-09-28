@@ -1,100 +1,105 @@
-import React from 'react'
-import Link from 'next/link'
-import varun from "../public/Crew/Varun.jpg"
-import percy from "../public/Crew/Percy.jpeg"
-import Image from "next/image"
-import Banner from '../components/reusable/Banner'
-import Heading from '../components/reusable/Heading'
+import React from "react";
+import Link from "next/link";
+import varun from "../public/Crew/Varun.jpg";
+import percy from "../public/Crew/Percy.jpeg";
+import Image from "next/image";
+import Banner from "../components/reusable/Banner";
+import Heading from "../components/reusable/Heading";
 // import Asma from '../public/Crew/Asma.jpg'
-import Shubham from '../public/Crew/Shubham.jpeg'
-import Krishna from '../public/Crew/Krishna.jpg'
-import Rishabh from '../public/Crew/Rishabh.jpg'
-import Sarvesh from '../public/Crew/Sarvesh.jpg'
-import Niruji from '../public/Crew/Niruji.jpeg'
-import Asma01 from '../public/Crew/Asma01.png'
-// import Niruji from '../components/reusable/Rishabh.jpg'
+import asma from "../public/Crew/Asma01.jpg";
+import Shubham from "../public/Crew/Shubham.jpeg";
+import Krishna from "../public/Crew/Krishna.jpg";
+import Rishabh from "../public/Crew/Rishabh.jpg";
+import Sarvesh from "../public/Crew/Sarvesh.jpg";
+import Niruji from "../public/Crew/Niruji.jpeg";
+import Asma01 from "../public/Crew/Asma01.png";
+// import Niruji from "../components/reusable/Niruji.jpeg";
 
 const people = [
-    {
-        name: 'Varun Parikh',
-        role: 'Founder & Engineer',
-        image: varun,
-        bio: 'Bay Owl Studios was conceptualised and founded from Varun’s passion for audio engineering and music. Between sessions you’ll usually find him near the coffee machine, avidly discussing sports or having a casual geopolitical debate!',
-    },
-    {
-        name: 'Percy Lima',
-        role: 'Engineer',
-        image: percy,
-        bio: 'Genuinely one of the nicest people you’ll meet, Percy will often go way beyond the scope of work to help you out. Ever dependable, don’t let his usual quiet demeanour in the studio fool you, he will almost always be on point with what’s required for your project. Challenge Percy to a game of table tennis or FIFA after your session and watch his competitive side come to the fore!',
-    },
-    {
-        name: 'Asma Shaikh',
-        role: 'Studio Manager',
-        image: Asma01,
-        bio: "Affable, amiable and a true people’s person, Asma is our manager in more ways than she knows. The cog that adds coherence to our effervescent studio, she goes above and beyond to take care of everyone in our little Bay Owl family. It’s no different with clients, as she always goes out of her way to accommodate every request as much as possible!",
-    },
-    {
-        name: 'Shubham Patil',
-        role: 'Junior Engineer',
-        image: Shubham,
-        bio: "Shubham's love for the studio comes from a keen sense of belonging in the room. Quick and adept on the console, he'll make your recording sessions a breeze, probably saving you hours of editing time with his speed. He's found a love for recording rap, hip-hop, and other solo artists, and in his short career he's already worked with several big name artists such as Divine, Mc Altaf, KSHMR, etc. Outside the control room, away from the seriousness, you'll often catch him goofing around with others in the studio. His one liners are sure to put a smile on your face and brighten up your day :) ",
-    },
-    {
-        name: 'Krishna Karambelkar',
-        role: 'Support Staff',
-        image: Krishna,
-        bio: "Our go to man for absolutely anything, Krishna always says yes, and always with a smile! Having worked various roles in this industry over the last 25 years or so, he is an asset unlike any other. Whatever your requirement, small or big, Krishna has you covered, and even when he doesn’t, he’ll find a way to make it happen! Always helpful, always smiling, Krishna is the Alfred to our Bay Owl cave!",
-    },
-    {
-        name: 'Rishabh Brahmabhatt',
-        role: 'Assistant Engineer',
-        image: Rishabh,
-        bio: "Rishabh has only been with us a short while so far, but in just a few months has shown tremendous potential to go far in this line. Already a step ahead of most of his peers with his knowledge of music, Rishabh is also a passionate musician and keyboard player. Always helpful to others no questions asked, he's seamlessly become a part of our Bay Owl family.",
-    },
-    {
-        name: 'Niruji Solanki',
-        role: 'Support Staff',
-        image: Niruji,
-        bio: "The senior-most member of our little clad, Niruji is also the most introvert of our lot. But with a little push, she loves to have conversations over chai. Her love for her family is always evident from her conversations, and it’s a privilege to have a soul as gentle and warm as hers a part of Bay Owl! ",
-    },
-    {
-        name: 'Sarvesh Dhamorikar',
-        role: 'Assistant Engineer',
-        image: Sarvesh,
-        bio: "Sarvesh too has been with us for just a few months, and has also in those few months shown tremendous potential. He's a talented musician and singer, but of late has shown great promise working with with audio for film. Sarvesh is someone who always speaks his mind, which is a rare quality. Ever ready to help others, he's one of the friendliest souls you'll meet.",
-    },
-    // More people...
-]
+  {
+    name: "Varun Parikh",
+    role: "Founder & Engineer",
+    image: varun,
+    bio: "Bay Owl Studios was conceptualised and founded from Varun’s passion for audio engineering and music. Between sessions you’ll usually find him near the coffee machine, avidly discussing sports or having a casual geopolitical debate!",
+  },
+  {
+    name: "Percy Lima",
+    role: "Engineer",
+    image: percy,
+    bio: "Genuinely one of the nicest people you’ll meet, Percy will often go way beyond the scope of work to help you out. Ever dependable, don’t let his usual quiet demeanour in the studio fool you, he will almost always be on point with what’s required for your project. Challenge Percy to a game of table tennis or FIFA after your session and watch his competitive side come to the fore!",
+  },
+  {
+    name: "Asma Shaikh",
+    role: "Studio Manager",
+    image: Asma01,
+    bio: "Affable, amiable and a true people’s person, Asma is our manager in more ways than she knows. The cog that adds coherence to our effervescent studio, she goes above and beyond to take care of everyone in our little Bay Owl family. It’s no different with clients, as she always goes out of her way to accommodate every request as much as possible!",
+  },
+  {
+    name: "Shubham Patil",
+    role: "Junior Engineer",
+    image: Shubham,
+    bio: "Shubham's love for the studio comes from a keen sense of belonging in the room. Quick and adept on the console, he'll make your recording sessions a breeze, probably saving you hours of editing time with his speed. He's found a love for recording rap, hip-hop, and other solo artists, and in his short career he's already worked with several big name artists such as Divine, Mc Altaf, KSHMR, etc. Outside the control room, away from the seriousness, you'll often catch him goofing around with others in the studio. His one liners are sure to put a smile on your face and brighten up your day :) ",
+  },
+  {
+    name: "Krishna Karambelkar",
+    role: "Support Staff",
+    image: Krishna,
+    bio: "Our go to man for absolutely anything, Krishna always says yes, and always with a smile! Having worked various roles in this industry over the last 25 years or so, he is an asset unlike any other. Whatever your requirement, small or big, Krishna has you covered, and even when he doesn’t, he’ll find a way to make it happen! Always helpful, always smiling, Krishna is the Alfred to our Bay Owl cave!",
+  },
+  {
+    name: "Rishabh Brahmabhatt",
+    role: "Assistant Engineer",
+    image: Rishabh,
+    bio: "Rishabh has only been with us a short while so far, but in just a few months has shown tremendous potential to go far in this line. Already a step ahead of most of his peers with his knowledge of music, Rishabh is also a passionate musician and keyboard player. Always helpful to others no questions asked, he's seamlessly become a part of our Bay Owl family.",
+  },
+  {
+    name: "Niruji Solanki",
+    role: "Support Staff",
+    image: Niruji,
+    bio: "The senior-most member of our little clad, Niruji is also the most introvert of our lot. But with a little push, she loves to have conversations over chai. Her love for her family is always evident from her conversations, and it’s a privilege to have a soul as gentle and warm as hers a part of Bay Owl! ",
+  },
+  {
+    name: "Sarvesh Dhamorikar",
+    role: "Assistant Engineer",
+    image: Sarvesh,
+    bio: "Sarvesh too has been with us for just a few months, and has also in those few months shown tremendous potential. He's a talented musician and singer, but of late has shown great promise working with with audio for film. Sarvesh is someone who always speaks his mind, which is a rare quality. Ever ready to help others, he's one of the friendliest souls you'll meet.",
+  },
+  // More people...
+];
 
 function TheCrew() {
-    return (
-        <>
-            <Banner title='The Crew' />
-            <div className="bg-darkBlue text-white">
-                <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
-                    <div className="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
-                        <div className="lg:col-span-2">
-                            <ul
-                                role="list"
-                                className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8"
-                            >
-                                {people.map((person) => (
-                                    <li key={person.name}>
-                                        <div className="space-y-4">
-                                            <div className="aspect-w-3 aspect-h-1 overflow-clip h-64 w-48">
-                                                {person.image && (
-                                                    <Image className="shadow-lg rounded-lg" src={person.image} objectFit="cover" />
-                                                )}
-                                            </div>
-                                            <div className="text-lg leading-6 font-medium space-y-1">
-                                                <h3>{person.name}</h3>
-                                                <p className="text-primary font-bold">{person.role}</p>
-                                            </div>
-                                            <div className="text-lg">
-                                                <p className="text-white text-justify">{person.bio}</p>
-                                            </div>
-                                            {/* Socials */}
-                                            {/* <ul role="list" className="flex space-x-5">
+  return (
+    <>
+      <Banner title="The Crew" />
+      <div className="bg-darkBlue text-white">
+        <div className="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+          <div className="space-y-12 lg:grid lg:grid-cols-2 lg:gap-8 lg:space-y-0">
+            <div className="lg:col-span-2">
+              <ul
+                role="list"
+                className="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:gap-x-8"
+              >
+                {people.map((person) => (
+                  <li key={person.name}>
+                    <div className="space-y-4">
+                      <div className="aspect-w-3 aspect-h-1 overflow-clip h-64 w-48">
+                        {person.image && (
+                          <Image
+                            className="shadow-lg rounded-lg"
+                            src={person.image}
+                            objectFit="cover"
+                          />
+                        )}
+                      </div>
+                      <div className="text-lg leading-6 font-medium space-y-1">
+                        <h3>{person.name}</h3>
+                        <p className="text-primary font-bold">{person.role}</p>
+                      </div>
+                      <div className="text-lg">
+                        <p className="text-white text-justify">{person.bio}</p>
+                      </div>
+                      {/* Socials */}
+                      {/* <ul role="list" className="flex space-x-5">
                                         <li>
                                             <a href={person.twitterUrl} className="text-gray-400 hover:text-white">
                                                 <span className="sr-only">Twitter</span>
@@ -116,17 +121,16 @@ function TheCrew() {
                                             </a>
                                         </li>
                                     </ul> */}
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
                     </div>
-                </div>
-
+                  </li>
+                ))}
+              </ul>
             </div>
-        </>
-    )
+          </div>
+        </div>
+      </div>
+    </>
+  );
 }
 
-export default TheCrew
+export default TheCrew;
