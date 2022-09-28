@@ -1,15 +1,9 @@
 import type { NextPage } from "next";
 import Banner from "../components/reusable/Banner";
-import { MouseEvent, useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import Head from "next/head";
+import { MouseEvent, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import Button from "../components/reusable/Button";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-
-const MySwal = withReactContent(Swal);
 
 const Contact: NextPage = () => {
   const [contactFormData, setContactFormData] = useState({
@@ -18,21 +12,6 @@ const Contact: NextPage = () => {
     phone: "",
     message: "",
   });
-  const router = useRouter();
-  const query = router.query;
-
-  useEffect(() => {
-    console.log(query);
-    if (query && query.submit === "true") {
-      MySwal.fire({
-        icon: "success",
-        titleText: "Success",
-        text: "Thank you for submitting an inquiry. A crew member will get in touch with you shortly.",
-        timer: 3500,
-        showConfirmButton: false,
-      });
-    }
-  }, [query]);
 
   const handleSubmit = async (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
@@ -174,11 +153,7 @@ const Contact: NextPage = () => {
               <h2 className="text-3xl font-extrabold tracking-tight sm:text-4xl text-transparent bg-clip-text bg-gradient-to-br from-orange1 to-orange3 mb-4">
                 Leave us a message.
               </h2>
-              <form
-                method="POST"
-                className="grid grid-cols-1 gap-y-6 "
-                action="/contact?submit=true"
-              >
+              <form method="POST" className="grid grid-cols-1 gap-y-6">
                 <div>
                   <label htmlFor="full-name" className="sr-only">
                     Full name
