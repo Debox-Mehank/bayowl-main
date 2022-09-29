@@ -83,7 +83,7 @@ function pricing() {
                                 </div>
                                 {sections.map((section) => (
                                     <table key={section.name} className="w-full">
-                                        <caption className="border-t border-gray-200 py-3 px-4 text-sm font-medium text-gray-900 text-left">
+                                        <caption className="py-3 px-4 font-bold text-md text-white text-left">
                                             {section.name}
                                         </caption>
                                         <thead>
@@ -99,7 +99,7 @@ function pricing() {
                                         <tbody className="divide-y divide-gradient1">
                                             {section.features.map((feature) => (
                                                 <tr key={feature.name} className="border-t border-gray-200">
-                                                    <th className="py-5 px-4 text-sm font-normal text-primary text-left" scope="row">
+                                                    <th className="py-5 px-4 text-sm font-normal text-white text-left" scope="row">
                                                         {feature.name}
                                                     </th>
                                                     <td className="py-5 pr-4">

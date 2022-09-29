@@ -400,16 +400,19 @@ function Navbar() {
               <ul className="px-4 py-2 font-bold text-sm md:text-base flex flex-col">
                 <span className="-ml-4 mb-2">Mumbai Studio</span>
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Studio Services"
                   link="/studio-services"
                   active={router.pathname === "/studio-services"}
                 />
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Pricing"
                   link="/pricing"
                   active={router.pathname === "/pricing"}
                 />
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Gear List"
                   link="/#gear"
                   active={router.pathname === "/#gear"}
@@ -417,20 +420,22 @@ function Navbar() {
               </ul>
               <hr className="my-2" />
 
-              <hr className="my-2" />
               <ul className="px-4 py-2 font-bold text-sm md:text-base flex flex-col">
                 <span className="-ml-4 mb-2">Portfolio</span>
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Showreel"
                   link="/showreel"
                   active={router.pathname === "/showreel"}
                 />
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Clients & Brands"
                   link="/#clients-brands"
                   active={router.pathname === "/clients-brands"}
                 />
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Testimonials"
                   link="/#testimonials"
                   active={router.pathname === "/testimonials"}
@@ -441,11 +446,13 @@ function Navbar() {
                 <span className="-ml-4 mb-2">About</span>
 
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="The Crew"
                   link="/the-crew"
                   active={router.pathname === "/the-crew"}
                 />
                 <NavItem
+                  onClick={() => setIsOpen(false)}
                   title="Studio"
                   link="/studio"
                   active={router.pathname === "/studio"}
@@ -453,6 +460,7 @@ function Navbar() {
               </ul>
               <hr className="my-2" />
               <NavItem
+                onClick={() => setIsOpen(false)}
                 title="Contact"
                 link="/contact"
                 active={router.pathname === "/contact"}
