@@ -26,8 +26,11 @@ const NavItem = ({
   onClick,
 }: NavItemProps) => {
   return (
-    <Link onClick={onClick} href={link}>
-      <span className="transition-colors duration-300 hover:text-primary cursor-pointer space-x-1">
+    <Link href={link}>
+      <span
+        onClick={onClick}
+        className="transition-colors duration-300 hover:text-primary cursor-pointer space-x-1"
+      >
         <a
           className={`py-2 font-bold items-center justify-center transition-colors duration-300 hover:text-primary  text-xs md:text-base ${
             active ? "text-primary" : "text-white"

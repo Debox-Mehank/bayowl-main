@@ -494,28 +494,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-// <div className='transparent text-white z-50'>
-// <div className='max-w-7xl mx-auto py-3'>
-//     <div className='flex items-center justify-between'>
-//         {/* <logo /> */}
-//         <Link href={"/"}>
-//
-//         </Link>
-
-//         <ul className='flex flex-row justify-center items-center gap-8'>
-//             <li className='cursor-pointer hover:text-primary transition-colors duration-300'>Online Studio</li>
-//             <li className='cursor-pointer hover:text-primary transition-colors duration-300'>Studio Services</li>
-//             <li className='cursor-pointer hover:text-primary transition-colors duration-300'>Facilities</li>
-//             <li className='cursor-pointer hover:text-primary transition-colors duration-300'>Gallery</li>
-//             <li className='cursor-pointer hover:text-primary transition-colors duration-300'>Portfolio</li>
-//             {/* Dropdown -> Showreel, Clients & Brands, Testimonials  */}
-//             <li className='cursor-pointer hover:text-primary transition-colors duration-300'>About</li>
-//             {/* Dropdown -> The Crew , Studio  */}
-//             <li className='cursor-poi   nter hover:text-primary transition-colors duration-300'>Contact</li>
-//         </ul>
-//     </div>
-
-// </div>
-
-// </div>
